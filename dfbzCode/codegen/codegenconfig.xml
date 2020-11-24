@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation="codegen.xsd">
+	<variables>
+		<variable name="developer" value="admin" /><!-- 作者 -->
+		<variable name="company" value="东方标准" /><!-- 公司名 -->
+		<variable name="system" value="recruit"/><!-- 包名，例如：com.ktc.base -->
+		<variable name="domain" value="com.ktc"/>
+		<variable name="startName" value="Recruit"/>		<!-- SpringBoot启动类名称 -->
+		<variable name="email" value="10001@qq.com"/><!-- 公司邮箱 -->
+	</variables>
+
+	<!-- 模板路劲 -->
+	<templates>
+		<template id="dao" path="dao.ftl"/>
+		<template id="service"  path="service.ftl"/>
+		<template id="pojo"  path="pojo.ftl"/>
+		<template id="controller" path="controller.ftl" />
+		<template id="application" path="application.ftl" /><!-- 启动类-->
+		<template id="applicationConfig" path="applicationConfig.ftl" /><!-- 配置文件-->
+		<template id="BaseExceptionHandler" path="BaseExceptionHandler.ftl" /><!-- 统一异常处理类-->
+		<template id="pom" path="pom.ftl" /><!-- pom-->
+	</templates>
+
+	<!-- 生成的文件存放路径 -->
+	<files baseDir="D:\ktc_Code\ktc_recruit" >
+		<file refTemplate="dao" filename="{class}Dao.java" dir="src\main\java\com\ktc\{system}\dao" sub="true"  override="true"/>
+		<file refTemplate="pojo" filename="{class}.java" dir="src\main\java\com\ktc\{system}\pojo" sub="true"  override="true"/>
+		<file refTemplate="service" filename="{class}Service.java" dir="src\main\java\com\ktc\{system}\service" sub="false"  override="true"/>
+		<file refTemplate="controller" filename="{class}Controller.java" dir="src\main\java\com\ktc\{system}\controller" sub="false"  override="true"/>
+		<file refTemplate="application" filename="{startName}Application.java" dir="src\main\java\com\ktc\{system}" sub="false"  override="true"/>
+		<file refTemplate="applicationConfig" filename="application.yml" dir="src\main\resources" sub="false"  override="true"/>
+		<file refTemplate="BaseExceptionHandler" filename="BaseExceptionHandler.java" dir="src\main\java\com\ktc\{system}\controller" sub="false"  override="true"/>
+		<file refTemplate="pom" filename="pom.xml" dir="\" sub="false"  override="true"/>
+	</files>
+
+	<!-- 数据库表名 -->
+	<table tableName="tb_enterprise">
+		<!-- 类名 -->
+		<variable name="class" value="Enterprise" />
+		<!-- 设为空即可-->
+		<variable name="package" value="" />
+	</table>
+
+</config>

@@ -11,6 +11,7 @@
     <modules>
         <module>ktc_common</module>
         <module>ktc_base</module>
+        <module>ktc_recruit</module>
     </modules>
 
     <parent>

@@ -1,0 +1,15 @@
+server:
+  port: 9091
+spring: 
+  application:  
+    name: ktc-recruit #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://8.129.161.111:3307/ktc_recruit?characterEncoding=UTF8
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true	# 格式化sql
+        show_sql: true		# 显示sql
