@@ -4,9 +4,10 @@
 	<variables>
 		<variable name="developer" value="admin" /><!-- 作者 -->
 		<variable name="company" value="东方标准" /><!-- 公司名 -->
-		<variable name="system" value="recruit"/><!-- 包名，例如：com.ktc.base -->
+		<variable name="system" value="gathering"/><!-- 包名，例如：com.ktc.base -->
 		<variable name="domain" value="com.ktc"/>
-		<variable name="startName" value="Recruit"/>		<!-- SpringBoot启动类名称 -->
+		<variable name="startName" value="Gathering"/>		<!-- SpringBoot
+		启动类名称 -->
 		<variable name="email" value="10001@qq.com"/><!-- 公司邮箱 -->
 	</variables>
 
@@ -23,7 +24,7 @@
 	</templates>
 
 	<!-- 生成的文件存放路径 -->
-	<files baseDir="D:\ktc_Code\ktc_recruit" >
+	<files baseDir="D:\ktc_Code\ktc_gathering" >
 		<file refTemplate="dao" filename="{class}Dao.java" dir="src\main\java\com\ktc\{system}\dao" sub="true"  override="true"/>
 		<file refTemplate="pojo" filename="{class}.java" dir="src\main\java\com\ktc\{system}\pojo" sub="true"  override="true"/>
 		<file refTemplate="service" filename="{class}Service.java" dir="src\main\java\com\ktc\{system}\service" sub="false"  override="true"/>
@@ -35,9 +36,9 @@
 	</files>
 
 	<!-- 数据库表名 -->
-	<table tableName="tb_enterprise">
+	<table tableName="tb_usergath">
 		<!-- 类名 -->
-		<variable name="class" value="Enterprise" />
+		<variable name="class" value="Usergath" />
 		<!-- 设为空即可-->
 		<variable name="package" value="" />
 	</table>

@@ -1,0 +1,9 @@
+server:
+  port: 9096
+spring:
+  application:
+    name: ktc-spit
+  data:
+    mongodb:
+      host: 8.129.161.111
+      database: spitdb

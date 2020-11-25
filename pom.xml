@@ -12,6 +12,10 @@
         <module>ktc_common</module>
         <module>ktc_base</module>
         <module>ktc_recruit</module>
+        <module>ktc_qa</module>
+        <module>ktc_article</module>
+        <module>ktc_gathering</module>
+        <module>ktc_spit</module>
     </modules>
 
     <parent>
@@ -53,6 +57,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+
     </repositories>
     <pluginRepositories>
         <pluginRepository>

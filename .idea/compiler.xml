@@ -6,19 +6,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ktc_article" />
         <module name="ktc_base" />
         <module name="ktc_common" />
+        <module name="ktc_gathering" />
+        <module name="ktc_qa" />
         <module name="ktc_recruit" />
+        <module name="ktc_spit" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ktc_article" options="-parameters" />
       <module name="ktc_base" options="-parameters" />
       <module name="ktc_common" options="-parameters" />
+      <module name="ktc_gathering" options="-parameters" />
       <module name="ktc_parent" options="-parameters" />
+      <module name="ktc_qa" options="-parameters" />
       <module name="ktc_recruit" options="-parameters" />
+      <module name="ktc_spit" options="-parameters" />
     </option>
   </component>
 </project>
