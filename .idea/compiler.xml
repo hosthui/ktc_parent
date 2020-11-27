@@ -12,7 +12,10 @@
         <module name="ktc_gathering" />
         <module name="ktc_qa" />
         <module name="ktc_recruit" />
+        <module name="ktc_search" />
+        <module name="ktc_sms" />
         <module name="ktc_spit" />
+        <module name="ktc_user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
@@ -26,7 +29,10 @@
       <module name="ktc_parent" options="-parameters" />
       <module name="ktc_qa" options="-parameters" />
       <module name="ktc_recruit" options="-parameters" />
+      <module name="ktc_search" options="-parameters" />
+      <module name="ktc_sms" options="-parameters" />
       <module name="ktc_spit" options="-parameters" />
+      <module name="ktc_user" options="-parameters" />
     </option>
   </component>
 </project>

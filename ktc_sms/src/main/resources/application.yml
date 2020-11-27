@@ -1,0 +1,13 @@
+server:
+  port: 9099
+spring:
+  application:
+    name: ktc_sms #微服名称
+  rabbitmq:
+    host: 8.129.161.111
+aliyun:
+  sms:
+    accessKeyId: LTAIEswp7dItFR3n
+    accessKeySecret: Hz80IUS5Y8uwdbE4tSj3rRzfb7cP2q
+    template_code: SMS_173341708
+    sign_name: 东方标准

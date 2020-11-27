@@ -16,6 +16,9 @@
         <module>ktc_article</module>
         <module>ktc_gathering</module>
         <module>ktc_spit</module>
+        <module>ktc_search</module>
+        <module>ktc_user</module>
+        <module>ktc_sms</module>
     </modules>
 
     <parent>

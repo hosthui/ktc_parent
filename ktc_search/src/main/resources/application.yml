@@ -1,0 +1,8 @@
+server:
+  port: 9097
+spring:
+  application:
+    name: ktc-search  #微服名称
+  data:
+    elasticsearch:
+      cluster-nodes: 8.129.161.111:9300

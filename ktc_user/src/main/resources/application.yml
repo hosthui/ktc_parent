@@ -1,0 +1,20 @@
+server:
+  port: 9098
+spring: 
+  application:  
+    name: ktc-user #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://8.129.161.111:3307/ktc_user?characterEncoding=UTF8
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true	# 格式化sql
+        show_sql: true		# 显示sql
+  redis:
+    host: 8.129.161.111
+    port: 6479
+  rabbitmq:
+    host: 8.129.161.111
