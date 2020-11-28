@@ -10,6 +10,9 @@ import com.ktc.user.pojo.User;
  * @date 2020-11-27 16:51:43
 */
 public interface UserDao extends JpaRepository<User,String>,JpaSpecificationExecutor<User>{
+	
+	
+	User findByMobile(String mobile);
 
 }
 

@@ -10,6 +10,6 @@ import com.ktc.user.pojo.Admin;
  * @date 2020-11-27 16:52:19
 */
 public interface AdminDao extends JpaRepository<Admin,String>,JpaSpecificationExecutor<Admin>{
-
+	Admin findByLoginname(String name);
 }
 

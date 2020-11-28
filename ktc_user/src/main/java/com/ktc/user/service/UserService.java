@@ -16,6 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import util.IdWorker;
 import com.ktc.user.dao.UserDao;
@@ -42,6 +43,10 @@ public class UserService {
 	
 	@Autowired
 	private RabbitMessagingTemplate rabbitMessagingTemplate;
+	
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	/**
 	 * 查询全部列表
@@ -215,6 +220,7 @@ public class UserService {
 		}else {
 			if ( o.equals(code) ){
 				user.setId(idWorker.nextId()+"" );
+				user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 				user.setFollowcount(0);//关注数
 				user.setFanscount(0);//粉丝数
 				user.setOnline(0L);//在线时长
@@ -222,6 +228,7 @@ public class UserService {
 				user.setUpdatedate(new Date());//更新日期
 				user.setLastdate(new Date());//最后登陆日期
 				userDao.save(user);
+				redisTemplate.delete("sms:" + user.getMobile());
 			
 			}else {
 				return new Result(StatusCode.ERROR,false,"验证码错误");
@@ -230,5 +237,19 @@ public class UserService {
 		
 		return new Result(StatusCode.OK,true,"注册成功");
 		
+	}
+	
+	public User login(User user) {
+		
+		User byMobile = userDao.findByMobile(user.getMobile());
+		
+		if ( byMobile!=null&&bCryptPasswordEncoder.matches(user.getPassword()
+				,byMobile.getPassword()) ){
+			return byMobile;
+		}
+		
+		
+		
+		return null;
 	}
 }

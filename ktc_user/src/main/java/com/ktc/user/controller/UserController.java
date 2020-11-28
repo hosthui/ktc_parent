@@ -121,9 +121,17 @@ public class UserController {
 	
 	@RequestMapping(value = "/register/{code}",method = RequestMethod.POST)
 	public Result register(@RequestBody User user,@PathVariable String code){
-		
-		
 		return userService.doRegister(user,code);
+	}
+	
+	@RequestMapping(value = "/login",method = RequestMethod.POST)
+	public Result login(@RequestBody User user){
+	
+	user=userService.login(user);
+	if ( user==null ){
+		return new Result(StatusCode.USER_PASSWORD_ERROR,false,"用户名或密码错误");
+	}
+	return new Result(StatusCode.OK,true,"登录成功");
 	}
 	
 }
